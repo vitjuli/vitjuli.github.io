@@ -1,0 +1,15 @@
+# Ignore everything in Desktop except the website
+*
+!.gitignore
+!my web/
+my web/*
+!my web/index.html
+!my web/profile.jpg
+!my web/libs/
+!my web/CV_Iuliia_Vitiugova.pdf
+
+# Also allow CV in root if it exists
+!CV_Iuliia_Vitiugova.pdf
+
+# System files
+.DS_Store
