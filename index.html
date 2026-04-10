@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Iuliia Vitiugova | Academic Website</title>
-  <meta name="description" content="Iuliia Vitiugova - MPhil in Data Intensive Science">
+  <meta name="description" content="Iuliia Vitiugova - MPhil in Data Intensive Science at the University of Cambridge. Research in mechanistic interpretability, physics-informed ML, and scientific AI.">
   <meta name="author" content="Iuliia Vitiugova">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -58,6 +58,43 @@
     }
     .tab-pane.active {
       display: block;
+    }
+
+    /* Project group headings */
+    .project-group-heading {
+      font-size: 0.78em;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #33C3F0;
+      border-bottom: 1px solid #e8f5fc;
+      padding-bottom: 6px;
+      margin-top: 36px;
+      margin-bottom: 18px;
+    }
+
+    /* Tag pills */
+    .tag {
+      display: inline-block;
+      background: #f0f8ff;
+      border: 1px solid #b8dff5;
+      color: #2a9fd6;
+      border-radius: 3px;
+      padding: 1px 7px;
+      font-size: 0.72em;
+      margin-right: 4px;
+      margin-top: 2px;
+      vertical-align: middle;
+    }
+    .tag-win {
+      background: #f0fff4;
+      border-color: #68d391;
+      color: #276749;
+    }
+    .tag-live {
+      background: #fffbeb;
+      border-color: #f6ad55;
+      color: #c05621;
     }
   </style>
 </head>
@@ -184,68 +221,267 @@
       </ul>
     </div>
 
-    <!-- Projects Section -->
+    <!-- ================================================================ -->
+    <!-- Projects Section                                                  -->
+    <!-- ================================================================ -->
     <div class="docs-section" id="projects">
       <h4>Projects</h4>
 
-      
+      <!-- ---- GROUP 1: ML / DL Research ---- -->
+      <p class="project-group-heading">ML / DL Research</p>
+
+      <!-- Mechanistic Interpretability -->
       <div class="paper">
-        <p class="title"><b>Mechanistic Interpretability of Open Source LLMs: reproduction of On the Biology of a Large Language Model</b></p>
-        <p> Investigation of mechanisms can be found in an open model,
-        Qwen3-4B-Instruct. DAMPT, University of Cambridge. </b></p>
-        </li>
-      </ul>
+        <p class="title">
+          <b>Mechanistic Interpretability of Open-Source LLMs</b>
+          <span class="tag">Interpretability</span><span class="tag">LLMs</span>
+        </p>
+        <p>Reproduction and extension of Anthropic's circuit-level interpretability methods on
+        <b>Qwen3-4B-Instruct</b>. Identifies interpretable feature interactions across model layers
+        using transcoders (sparse autoencoders on MLP activations), attribution graphs, and causal
+        interventions — ablation, activation patching, and feature steering. Introduces a formal
+        typology of LLM computation types and a pipeline for distinguishing causal from correlational
+        connections. Part of MPhil research at DAMTP, University of Cambridge.</p>
         <div class="paper-buttons">
-          <a class="button" href="https://github.com/vitjuli/Mechanistic-Interpretability-of-Open-Source-LLMs.git" target="_blank">Repository</a>
+          <a class="button" href="https://github.com/vitjuli/Mechanistic-Interpretability-of-Open-Source-LLMs" target="_blank">Repository</a>
+          <a class="button" href="https://vitjuli.github.io/Interpretability-web/" target="_blank">Live Dashboard</a>
         </div>
       </div>
 
-
+      <!-- Interpretability Web Dashboard -->
       <div class="paper">
-        <p class="title"><b>Electronic Nose: Machine Learning for Gas Sensing</b></p>
-        <p>Developed machine learning models for gas sensing detection using semiconductor sensor arrays.
-        Research focused on pattern recognition, signal processing, and neural network interpretability.</p>
+        <p class="title">
+          <b>Mechanistic Interpretability Dashboard</b>
+          <span class="tag tag-live">Live Demo</span><span class="tag">Vue.js</span>
+        </p>
+        <p>Interactive web application for exploring mechanistic interpretability research results.
+        Built with Vue.js and Vite, deployed on GitHub Pages. Makes dense interpretability findings
+        navigable for collaborators and reviewers without requiring direct code access.</p>
+        <div class="paper-buttons">
+          <a class="button" href="https://vitjuli.github.io/Interpretability-web/" target="_blank">Live Demo</a>
+          <a class="button" href="https://github.com/vitjuli/Interpretability-web" target="_blank">Repository</a>
+        </div>
+      </div>
 
-        <p style="margin-top: 15px; margin-bottom: 10px;"><b>Subprojects:</b></p>
+      <!-- Electronic Nose: Calibration & Feature Analysis -->
+      <div class="paper">
+        <p class="title">
+          <b>Electronic Nose: Calibration &amp; Feature Analysis for Gas Sensing</b>
+          <span class="tag">Neural Networks</span><span class="tag">XAI</span>
+        </p>
+        <p>Machine learning models for gas concentration prediction using semiconductor sensor arrays
+        (hydrogen and propane, 30–1600 ppm, 150–500°C). Research covered two complementary directions:</p>
         <ul style="margin-left: 25px; margin-bottom: 15px;">
-          <li style="margin-bottom: 10px;">
-            <b>Feature Analysis in Physics Data:</b> Interpretability analysis using different methods for feature selection and extraction.
-            Applied Weight Analysis and Deep Taylor Decomposition of neural networks to understand which features
-            contribute most to gas sensing predictions.
+          <li style="margin-bottom: 8px;">
+            <b>Feature Analysis:</b> Compared four interpretability methods — Weight Analysis, Deep Taylor
+            Decomposition, permutation importance, and fixed-value masking — to identify which sensor
+            measurements drive predictions. Deep Taylor Decomposition achieved MSE&nbsp;=&nbsp;23.20&nbsp;&plusmn;&nbsp;0.96&nbsp;ppm with 50% feature selection; weight-based analysis reached R²&nbsp;=&nbsp;0.779&nbsp;&plusmn;&nbsp;0.009.
           </li>
-          <li style="margin-bottom: 10px;">
-            <b>Calibration of Neural Networks:</b> Investigated calibration techniques for neural network classifiers
-            applied to sensor data, based on
-            <a href="https://arxiv.org/pdf/1706.04599" target="_blank">Guo et al. (2017)</a>
-            but adapted to gas sensing applications. Developed methods to improve probability estimates and model
-            reliability under domain shift and sensor drift conditions.
+          <li style="margin-bottom: 8px;">
+            <b>Neural Network Calibration:</b> Adapted temperature scaling, vector scaling, and matrix scaling
+            (Guo et al. 2017) to sensor drift conditions, improving probability reliability under domain shift.
           </li>
         </ul>
-
         <div class="paper-buttons">
-          <a class="button" href="https://github.com/vitjuli/electronic-nose-ml" target="_blank">Repository</a>
+          <a class="button" href="https://github.com/vitjuli/calibration-and-feature-analysis" target="_blank">Repository</a>
         </div>
       </div>
 
+      <!-- Embedding Geometry via Triplet Loss -->
       <div class="paper">
-        <p class="title"><b>PWD Studies: Pulse-Wave Doppler Analysis</b></p>
-        <p>Developed machine learning models for automated analysis of Pulse-Wave Doppler signals
-        in cardiovascular diagnostics. Implemented signal preprocessing pipelines and classification algorithms
-        to identify pathological patterns in arterial blood flow.</p>
+        <p class="title">
+          <b>Embedding Space Geometry via Triplet Loss &amp; Bayesian Optimisation</b>
+          <span class="tag">Metric Learning</span><span class="tag">PyTorch</span>
+        </p>
+        <p>Study of how hyperparameter choices shape the geometric structure of neural network embedding
+        spaces. Implements metric learning with batch-hard triplet loss mining and compares it against
+        cross-entropy baselines. Bayesian hyperparameter search (Optuna TPE) is used to efficiently
+        explore mixed architecture, learning-rate, and regularisation spaces.</p>
+        <p style="font-size: 0.9em; color: #555;">
+          Key results: 84.6% validation accuracy vs. 82% manual &mdash; 70% reduction in generalisation gap &mdash;
+          triplet separation ratio 2.33 vs. 0.94 for cross-entropy &mdash; 94% zero-shot transfer to MNIST.
+        </p>
+        <div class="paper-buttons">
+          <a class="button" href="https://github.com/vitjuli/embedding_geometry_triplet_loss" target="_blank">Repository</a>
+        </div>
+      </div>
+
+      <!-- NLP COVID -->
+      <div class="paper">
+        <p class="title">
+          <b>Information Retrieval for COVID-19 Scientific Literature</b>
+          <span class="tag">NLP</span><span class="tag">IR</span>
+        </p>
+        <p>Systematic benchmarking of classical and neural information retrieval techniques on the
+        TREC-COVID corpus (~51,000 documents, 50 queries). Compared TF-IDF, BM25, GloVe, Sentence-BERT,
+        and SciBERT, with query expansion via pseudo-relevance feedback and WordNet synonyms. BM25 achieved
+        Precision@10&nbsp;=&nbsp;0.50 and nDCG@10&nbsp;=&nbsp;0.83 — outperforming neural alternatives on this domain-specific benchmark.</p>
+        <div class="paper-buttons">
+          <a class="button" href="https://github.com/vitjuli/nlp_covid" target="_blank">Repository</a>
+        </div>
+      </div>
+
+      <!-- M2 Deep Learning Coursework -->
+      <div class="paper">
+        <p class="title">
+          <b>Normalising Flows — Deep Learning Coursework</b>
+          <span class="tag">Generative Models</span><span class="tag">PyTorch</span>
+        </p>
+        <p>Implementation and analysis of a RealNVP-style normalising flow for density estimation.
+        Architecture: 8 affine coupling layers (hidden width 128) with alternating binary masks,
+        trained with cosine-annealed Adam and gradient clipping. Includes flow surgery, FLOP counting,
+        and ablation studies on depth and batch size. Supervised by Dr. Miles Cranmer, MPhil in Data
+        Intensive Science, University of Cambridge.</p>
+        <p style="font-size: 0.9em; color: #555;">
+          Invertibility error: 5.96&thinsp;&times;&thinsp;10<sup>&minus;7</sup> &mdash;
+          log-det error: 9.43&thinsp;&times;&thinsp;10<sup>&minus;4</sup> &mdash;
+          test NLL: 0.4857
+        </p>
+        <div class="paper-buttons">
+          <a class="button" href="https://github.com/vitjuli/M2-Deep-Learning-Courswork" target="_blank">Repository</a>
+        </div>
+      </div>
+
+      <!-- ---- GROUP 2: Physics & DL ---- -->
+      <p class="project-group-heading">Physics &amp; Scientific Computing</p>
+
+      <!-- Calorimeter -->
+      <div class="paper">
+        <p class="title">
+          <b>Calorimeter Energy Resolution Analysis</b>
+          <span class="tag">Particle Physics</span><span class="tag">Statistics</span>
+        </p>
+        <p>Statistical characterisation of particle detector response for a calorimeter:
+        energy-dependent bias, resolution, and noise contributions across the full energy spectrum.
+        Systematically compared six estimation methods — basic statistics with least-squares trending,
+        per-energy unbinned MLE, simultaneous global likelihood fitting, profile likelihood confidence
+        intervals, jackknife resampling, and bootstrap propagation — demonstrating that simultaneous
+        fitting outperforms binned approaches by avoiding information loss.</p>
+        <div class="paper-buttons">
+          <a class="button" href="https://github.com/vitjuli/calorimeter_energy_resolution_analysis" target="_blank">Repository</a>
+        </div>
+      </div>
+
+      <!-- High Energy Physics -->
+      <div class="paper">
+        <p class="title">
+          <b>High-Energy Physics: Gaussian Processes &amp; Symmetry Invariants</b>
+          <span class="tag">HEP</span><span class="tag">Gaussian Processes</span>
+        </p>
+        <p>Computational notebooks exploring two foundational techniques in high-energy physics
+        analysis: Gaussian process regression for uncertainty-aware modelling of physical observables,
+        and symmetry invariants — quantities preserved under physical transformations — applied to
+        classification and regression tasks in particle physics contexts.</p>
+        <div class="paper-buttons">
+          <a class="button" href="https://github.com/vitjuli/High-Energy-Physics" target="_blank">Repository</a>
+        </div>
+      </div>
+
+      <!-- Galactic Archaeology -->
+      <div class="paper">
+        <p class="title">
+          <b>Galactic Archaeology — Stellar Stream Simulation</b>
+          <span class="tag">Astrophysics</span><span class="tag">N-body</span>
+        </p>
+        <p>N-body simulation of tidal stellar streams using the <em>Gala</em> astrophysics library.
+        Uses Palomar 5 (Pal 5) as a case study: a globular cluster at 22.9 kpc whose stars are torn
+        into streams by the Milky Way's gravitational field. Employs the FardalStreamDF distribution
+        function and a Plummer potential model; integrates particle orbits backward in time to
+        reconstruct stream formation history and visualise 3D particle distributions.</p>
+        <div class="paper-buttons">
+          <a class="button" href="https://github.com/vitjuli/Galactic-Archeology" target="_blank">Repository</a>
+        </div>
+      </div>
+
+      <!-- PWV Study -->
+      <div class="paper">
+        <p class="title">
+          <b>Pulse-Wave Velocity Analysis — Cardiovascular Signal Processing</b>
+          <span class="tag">HealthTech</span><span class="tag">Signal Processing</span>
+        </p>
+        <p>Research-grade pipelines for computing pulse wave velocity (PWV) from PPG
+        (photoplethysmography) signals — a clinical marker of arterial stiffness and cardiovascular
+        risk. Three independent pipeline implementations (SegmentalProcessing, TransitTimeMethod,
+        CompositePWV) evaluated on both synthetic data and public PhysioNet datasets.
+        Built with reproducibility as a first-class goal: GitHub Actions CI, pytest suite,
+        CITATION.cff, and publication-quality figures.</p>
         <div class="paper-buttons">
           <a class="button" href="https://github.com/vitjuli/pwv-study" target="_blank">Repository</a>
         </div>
       </div>
 
+      <!-- HPC Cholesky -->
       <div class="paper">
-        <p class="title"><b>Lab-Management System - Cambridge & OpenAI Hackathon</b></p>
-        <p>Award-winning lab-management system based on AI-agents. The system automates laboratory workflow
-        management and resource allocation using multi-agent reinforcement learning. <b>Winner: Best AI Project (2025)</b></p>
+        <p class="title">
+          <b>OpenMP Cholesky Factorisation Optimisation on HPC</b>
+          <span class="tag">HPC</span><span class="tag">C++</span><span class="tag">OpenMP</span>
+        </p>
+        <p>Incremental optimisation of Cholesky matrix factorisation from a serial baseline to a
+        tuned OpenMP parallel implementation, targeting the CSD3 HPC cluster (icelake: 76 cores).
+        Four implementation versions: serial baseline (~0.56 GFLOP/s), optimised serial with loop
+        reordering and hoisting (~4&ndash;5&times; faster), persistent-thread OpenMP
+        (~2&ndash;4&times; faster than V1 with 4 threads), and a column-scaled variant.
+        Validated with 35&ndash;42 assertions per version covering numerical stability and
+        reconstruction error. MPhil in Data Intensive Science, University of Cambridge.</p>
+        <div class="paper-buttons">
+          <a class="button" href="https://github.com/vitjuli/optimisation-of-openmp-cholesky-factorisation-on-hpc" target="_blank">Repository</a>
+        </div>
+      </div>
+
+      <!-- ---- GROUP 3: Other Projects ---- -->
+      <p class="project-group-heading">Other Projects</p>
+
+      <!-- LabSphere.ai -->
+      <div class="paper">
+        <p class="title">
+          <b>LabSphere.ai — AI-Powered Lab Management System</b>
+          <span class="tag tag-win">Winner: Best AI Project 2025</span>
+        </p>
+        <p>Award-winning multi-agent AI system for laboratory workflow automation, built at the
+        <b>Cambridge &times; OpenAI Hackathon 2025</b>. Automates experiment scheduling, reagent
+        inventory management, and resource allocation using multi-agent reinforcement learning,
+        reducing manual coordination overhead for research teams.</p>
         <div class="paper-buttons">
           <a class="button" href="https://github.com/vitjuli/LabSphere.ai" target="_blank">Repository</a>
         </div>
       </div>
+
+      <!-- Interpolator -->
+      <div class="paper">
+        <p class="title">
+          <b>Interpolator — End-to-End ML Deployment Platform</b>
+          <span class="tag">Full-Stack</span><span class="tag">FastAPI</span><span class="tag">Next.js</span>
+        </p>
+        <p>Production-grade platform for training, deploying, and querying PyTorch neural networks
+        on regression tasks. Provides a REST API backend (FastAPI), a modern React/TypeScript
+        frontend (Next.js 14), and full Docker containerisation. Features automated data validation,
+        early stopping, real-time inference, and health checks.</p>
+        <p style="font-size: 0.9em; color: #555;">
+          64 tests &mdash; 100% code coverage &mdash; CI/CD &mdash; Docker &mdash; TorchMetrics
+        </p>
+        <div class="paper-buttons">
+          <a class="button" href="https://github.com/vitjuli/interpolator" target="_blank">Repository</a>
+        </div>
+      </div>
+
+      <!-- FactTrace / cambridge-dis-hackathon -->
+      <div class="paper">
+        <p class="title">
+          <b>FactTrace — Multi-Agent AI Fact-Checking System</b>
+          <span class="tag">Multi-agent</span><span class="tag">LLMs</span>
+        </p>
+        <p>Multi-agent debate system where AI agents with distinct roles — skeptic, pedantic
+        fact-checker, common-sense judge — argue and negotiate to reach a verdict on factual claims.
+        Built in 24 hours at the <b>Cambridge DiS Hackathon</b>. Produces transparent reasoning
+        chains rather than a binary true/false, surfacing ambiguity and uncertainty explicitly.
+        Includes a visual HTML analysis dashboard and structured debate transcripts.</p>
+        <div class="paper-buttons">
+          <a class="button" href="https://github.com/vitjuli/cambridge-dis-hackathon" target="_blank">Repository</a>
+        </div>
+      </div>
+
     </div>
+    <!-- end #projects -->
 
     <!-- Awards Section -->
     <div class="docs-section" id="awards">
@@ -330,14 +566,11 @@
 
       tabButtons.forEach(button => {
         button.addEventListener('click', function() {
-          // Remove active class from all buttons and panes
           document.querySelectorAll('.tab-nav .button').forEach(btn => btn.classList.remove('active'));
           document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
 
-          // Add active class to clicked button
           this.classList.add('active');
 
-          // Show corresponding pane
           const targetId = this.getAttribute('data-ref');
           document.querySelector(targetId).classList.add('active');
         });
