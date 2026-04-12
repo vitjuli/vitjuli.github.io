@@ -173,9 +173,7 @@
             </div>
             <div class="desc">
               <b>Gemini Ambassador &mdash; Lead, London</b><br/>
-              Leading a team of 20 students at Cambridge, conducting trainings, driving community
-              activity, and working directly with Google Engineers and Product Leads on new Gemini
-              tool development.
+              Team lead, trainings &amp; Google product collaboration.
             </div>
           </div>
         </li>
@@ -279,6 +277,37 @@
         </div>
       </div>
 
+      <!-- M2 Deep Learning Coursework -->
+      <div class="paper">
+        <p class="title">
+          <b>Normalising Flows — Deep Learning Coursework</b>
+          <span class="tag">Generative Models</span><span class="tag">PyTorch</span>
+        </p>
+        <p>Implementation and analysis of a RealNVP-style normalising flow for density estimation,
+        using affine coupling layers with alternating binary masks, trained with cosine-annealed Adam
+        and gradient clipping. Includes flow surgery, FLOP counting, and ablation studies on depth
+        and batch size.</p>
+        <div class="paper-buttons">
+          <a class="button" href="https://github.com/vitjuli/M2-Deep-Learning-Courswork" target="_blank">Repository</a>
+        </div>
+      </div>
+
+      <!-- Embedding Geometry via Triplet Loss -->
+      <div class="paper">
+        <p class="title">
+          <b>Embedding Space Geometry via Triplet Loss &amp; Bayesian Optimisation</b>
+          <span class="tag">Metric Learning</span><span class="tag">PyTorch</span>
+        </p>
+        <p>Study of how hyperparameter choices shape the geometric structure of neural network embedding
+        spaces. Implements metric learning with batch-hard triplet loss mining and compares it against
+        cross-entropy baselines. Bayesian hyperparameter search (Optuna TPE) is used to efficiently
+        explore mixed architecture, learning-rate, and regularisation spaces, demonstrating improved
+        generalisation and zero-shot transfer compared to standard classification objectives.</p>
+        <div class="paper-buttons">
+          <a class="button" href="https://github.com/vitjuli/embedding_geometry_triplet_loss" target="_blank">Repository</a>
+        </div>
+      </div>
+
       <!-- Electronic Nose: Calibration & Feature Analysis -->
       <div class="paper">
         <p class="title">
@@ -303,22 +332,6 @@
         </div>
       </div>
 
-      <!-- Embedding Geometry via Triplet Loss -->
-      <div class="paper">
-        <p class="title">
-          <b>Embedding Space Geometry via Triplet Loss &amp; Bayesian Optimisation</b>
-          <span class="tag">Metric Learning</span><span class="tag">PyTorch</span>
-        </p>
-        <p>Study of how hyperparameter choices shape the geometric structure of neural network embedding
-        spaces. Implements metric learning with batch-hard triplet loss mining and compares it against
-        cross-entropy baselines. Bayesian hyperparameter search (Optuna TPE) is used to efficiently
-        explore mixed architecture, learning-rate, and regularisation spaces, demonstrating improved
-        generalisation and zero-shot transfer compared to standard classification objectives.</p>
-        <div class="paper-buttons">
-          <a class="button" href="https://github.com/vitjuli/embedding_geometry_triplet_loss" target="_blank">Repository</a>
-        </div>
-      </div>
-
       <!-- NLP COVID -->
       <div class="paper">
         <p class="title">
@@ -334,24 +347,24 @@
         </div>
       </div>
 
-      <!-- M2 Deep Learning Coursework -->
-      <div class="paper">
-        <p class="title">
-          <b>Normalising Flows — Deep Learning Coursework</b>
-          <span class="tag">Generative Models</span><span class="tag">PyTorch</span>
-        </p>
-        <p>Implementation and analysis of a RealNVP-style normalising flow for density estimation,
-        using affine coupling layers with alternating binary masks, trained with cosine-annealed Adam
-        and gradient clipping. Includes flow surgery, FLOP counting, and ablation studies on depth
-        and batch size. Supervised by Dr. Miles Cranmer, MPhil in Data Intensive Science,
-        University of Cambridge.</p>
-        <div class="paper-buttons">
-          <a class="button" href="https://github.com/vitjuli/M2-Deep-Learning-Courswork" target="_blank">Repository</a>
-        </div>
-      </div>
-
       <!-- ---- GROUP 2: Physics & DL ---- -->
       <p class="project-group-heading">Physics &amp; Scientific Computing</p>
+
+      <!-- HPC Cholesky -->
+      <div class="paper">
+        <p class="title">
+          <b>OpenMP Cholesky Factorisation Optimisation on HPC</b>
+          <span class="tag">HPC</span><span class="tag">C++</span><span class="tag">OpenMP</span>
+        </p>
+        <p>Incremental optimisation of Cholesky matrix factorisation from a serial baseline to a
+        tuned OpenMP parallel implementation, targeting the CSD3 HPC cluster. Progresses through
+        loop reordering, reciprocal hoisting, persistent thread teams, and column scaling, with
+        a comprehensive test suite validating numerical stability and reconstruction accuracy
+        at each stage.</p>
+        <div class="paper-buttons">
+          <a class="button" href="https://github.com/vitjuli/optimisation-of-openmp-cholesky-factorisation-on-hpc" target="_blank">Repository</a>
+        </div>
+      </div>
 
       <!-- Calorimeter -->
       <div class="paper">
@@ -417,22 +430,6 @@
         </div>
       </div>
 
-      <!-- HPC Cholesky -->
-      <div class="paper">
-        <p class="title">
-          <b>OpenMP Cholesky Factorisation Optimisation on HPC</b>
-          <span class="tag">HPC</span><span class="tag">C++</span><span class="tag">OpenMP</span>
-        </p>
-        <p>Incremental optimisation of Cholesky matrix factorisation from a serial baseline to a
-        tuned OpenMP parallel implementation, targeting the CSD3 HPC cluster. Progresses through
-        loop reordering, reciprocal hoisting, persistent thread teams, and column scaling, with
-        a comprehensive test suite validating numerical stability and reconstruction accuracy
-        at each stage. MPhil in Data Intensive Science, University of Cambridge.</p>
-        <div class="paper-buttons">
-          <a class="button" href="https://github.com/vitjuli/optimisation-of-openmp-cholesky-factorisation-on-hpc" target="_blank">Repository</a>
-        </div>
-      </div>
-
       <!-- ---- GROUP 3: Other Projects ---- -->
       <p class="project-group-heading">Other Projects</p>
 
@@ -461,11 +458,6 @@
         on five-dimensional regression tasks. Provides a REST API backend (FastAPI), a modern
         React/TypeScript frontend (Next.js 14), and full Docker containerisation. Features automated
         data validation, early stopping, real-time inference, and health checks.</p>
-        <p>The repository includes <b>comprehensive Sphinx documentation</b> with an in-depth
-        performance analysis covering four research dimensions: training time scaling across dataset
-        sizes, accuracy metrics under varying model configurations, memory usage profiling, and model
-        scalability benchmarks. Results are reported as structured JSON and graphical visualisations
-        (PNG), generated via both comprehensive and accelerated execution protocols for reproducibility.</p>
         <div class="paper-buttons">
           <a class="button" href="https://github.com/vitjuli/interpolator" target="_blank">Repository</a>
         </div>
