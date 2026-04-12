@@ -285,13 +285,13 @@
           <b>Electronic Nose: Calibration &amp; Feature Analysis for Gas Sensing</b>
           <span class="tag">Neural Networks</span><span class="tag">XAI</span>
         </p>
-        <p>Machine learning models for gas concentration prediction using semiconductor sensor arrays
-        (hydrogen and propane, 30–1600 ppm, 150–500°C). Research covered two complementary directions:</p>
+        <p>Machine learning models for gas concentration prediction using semiconductor sensor arrays.
+        Research covered two complementary directions:</p>
         <ul style="margin-left: 25px; margin-bottom: 15px;">
           <li style="margin-bottom: 8px;">
-            <b>Feature Analysis:</b> Compared four interpretability methods — Weight Analysis, Deep Taylor
+            <b>Feature Analysis:</b> Compared interpretability methods — Weight Analysis, Deep Taylor
             Decomposition, permutation importance, and fixed-value masking — to identify which sensor
-            measurements drive predictions. Deep Taylor Decomposition achieved MSE&nbsp;=&nbsp;23.20&nbsp;&plusmn;&nbsp;0.96&nbsp;ppm with 50% feature selection; weight-based analysis reached R²&nbsp;=&nbsp;0.779&nbsp;&plusmn;&nbsp;0.009.
+            measurements drive predictions.
           </li>
           <li style="margin-bottom: 8px;">
             <b>Neural Network Calibration:</b> Adapted temperature scaling, vector scaling, and matrix scaling
@@ -312,11 +312,8 @@
         <p>Study of how hyperparameter choices shape the geometric structure of neural network embedding
         spaces. Implements metric learning with batch-hard triplet loss mining and compares it against
         cross-entropy baselines. Bayesian hyperparameter search (Optuna TPE) is used to efficiently
-        explore mixed architecture, learning-rate, and regularisation spaces.</p>
-        <p style="font-size: 0.9em; color: #555;">
-          Key results: 84.6% validation accuracy vs. 82% manual &mdash; 70% reduction in generalisation gap &mdash;
-          triplet separation ratio 2.33 vs. 0.94 for cross-entropy &mdash; 94% zero-shot transfer to MNIST.
-        </p>
+        explore mixed architecture, learning-rate, and regularisation spaces, demonstrating improved
+        generalisation and zero-shot transfer compared to standard classification objectives.</p>
         <div class="paper-buttons">
           <a class="button" href="https://github.com/vitjuli/embedding_geometry_triplet_loss" target="_blank">Repository</a>
         </div>
@@ -329,9 +326,9 @@
           <span class="tag">NLP</span><span class="tag">IR</span>
         </p>
         <p>Systematic benchmarking of classical and neural information retrieval techniques on the
-        TREC-COVID corpus (~51,000 documents, 50 queries). Compared TF-IDF, BM25, GloVe, Sentence-BERT,
-        and SciBERT, with query expansion via pseudo-relevance feedback and WordNet synonyms. BM25 achieved
-        Precision@10&nbsp;=&nbsp;0.50 and nDCG@10&nbsp;=&nbsp;0.83 — outperforming neural alternatives on this domain-specific benchmark.</p>
+        TREC-COVID corpus. Compared TF-IDF, BM25, GloVe, Sentence-BERT, and SciBERT, with query
+        expansion via pseudo-relevance feedback and WordNet synonyms, demonstrating that lexical
+        methods can outperform neural alternatives on domain-specific biomedical corpora.</p>
         <div class="paper-buttons">
           <a class="button" href="https://github.com/vitjuli/nlp_covid" target="_blank">Repository</a>
         </div>
@@ -343,16 +340,11 @@
           <b>Normalising Flows — Deep Learning Coursework</b>
           <span class="tag">Generative Models</span><span class="tag">PyTorch</span>
         </p>
-        <p>Implementation and analysis of a RealNVP-style normalising flow for density estimation.
-        Architecture: 8 affine coupling layers (hidden width 128) with alternating binary masks,
-        trained with cosine-annealed Adam and gradient clipping. Includes flow surgery, FLOP counting,
-        and ablation studies on depth and batch size. Supervised by Dr. Miles Cranmer, MPhil in Data
-        Intensive Science, University of Cambridge.</p>
-        <p style="font-size: 0.9em; color: #555;">
-          Invertibility error: 5.96&thinsp;&times;&thinsp;10<sup>&minus;7</sup> &mdash;
-          log-det error: 9.43&thinsp;&times;&thinsp;10<sup>&minus;4</sup> &mdash;
-          test NLL: 0.4857
-        </p>
+        <p>Implementation and analysis of a RealNVP-style normalising flow for density estimation,
+        using affine coupling layers with alternating binary masks, trained with cosine-annealed Adam
+        and gradient clipping. Includes flow surgery, FLOP counting, and ablation studies on depth
+        and batch size. Supervised by Dr. Miles Cranmer, MPhil in Data Intensive Science,
+        University of Cambridge.</p>
         <div class="paper-buttons">
           <a class="button" href="https://github.com/vitjuli/M2-Deep-Learning-Courswork" target="_blank">Repository</a>
         </div>
@@ -399,11 +391,10 @@
           <b>Galactic Archaeology — Stellar Stream Simulation</b>
           <span class="tag">Astrophysics</span><span class="tag">N-body</span>
         </p>
-        <p>N-body simulation of tidal stellar streams using the <em>Gala</em> astrophysics library.
-        Uses Palomar 5 (Pal 5) as a case study: a globular cluster at 22.9 kpc whose stars are torn
-        into streams by the Milky Way's gravitational field. Employs the FardalStreamDF distribution
-        function and a Plummer potential model; integrates particle orbits backward in time to
-        reconstruct stream formation history and visualise 3D particle distributions.</p>
+        <p>N-body simulation of tidal stellar streams using the <em>Gala</em> astrophysics library,
+        with Palomar 5 as a case study. Employs the FardalStreamDF distribution function and a
+        Plummer potential model, integrating particle orbits backward in time to reconstruct
+        stream formation history and visualise particle distributions in galactic coordinates.</p>
         <div class="paper-buttons">
           <a class="button" href="https://github.com/vitjuli/Galactic-Archeology" target="_blank">Repository</a>
         </div>
@@ -433,12 +424,10 @@
           <span class="tag">HPC</span><span class="tag">C++</span><span class="tag">OpenMP</span>
         </p>
         <p>Incremental optimisation of Cholesky matrix factorisation from a serial baseline to a
-        tuned OpenMP parallel implementation, targeting the CSD3 HPC cluster (icelake: 76 cores).
-        Four implementation versions: serial baseline (~0.56 GFLOP/s), optimised serial with loop
-        reordering and hoisting (~4&ndash;5&times; faster), persistent-thread OpenMP
-        (~2&ndash;4&times; faster than V1 with 4 threads), and a column-scaled variant.
-        Validated with 35&ndash;42 assertions per version covering numerical stability and
-        reconstruction error. MPhil in Data Intensive Science, University of Cambridge.</p>
+        tuned OpenMP parallel implementation, targeting the CSD3 HPC cluster. Progresses through
+        loop reordering, reciprocal hoisting, persistent thread teams, and column scaling, with
+        a comprehensive test suite validating numerical stability and reconstruction accuracy
+        at each stage. MPhil in Data Intensive Science, University of Cambridge.</p>
         <div class="paper-buttons">
           <a class="button" href="https://github.com/vitjuli/optimisation-of-openmp-cholesky-factorisation-on-hpc" target="_blank">Repository</a>
         </div>
@@ -472,9 +461,6 @@
         on five-dimensional regression tasks. Provides a REST API backend (FastAPI), a modern
         React/TypeScript frontend (Next.js 14), and full Docker containerisation. Features automated
         data validation, early stopping, real-time inference, and health checks.</p>
-        <p style="font-size: 0.9em; color: #555;">
-          64 tests &mdash; 100% code coverage &mdash; CI/CD &mdash; Docker &mdash; TorchMetrics
-        </p>
         <p>The repository includes <b>comprehensive Sphinx documentation</b> with an in-depth
         performance analysis covering four research dimensions: training time scaling across dataset
         sizes, accuracy metrics under varying model configurations, memory usage profiling, and model
