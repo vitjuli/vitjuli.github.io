@@ -310,6 +310,22 @@
         </div>
       </div>
 
+      <!-- GRPO -->
+      <div class="paper">
+        <p class="title">
+          <b>GRPO Fine-Tuning of Gemma-3-1b on GSM8K</b>
+          <span class="tag">Reinforcement Learning</span><span class="tag">LLMs</span><span class="tag">JAX</span>
+        </p>
+        <p>Experimental study of GRPO fine-tuning of <b>gemma-3-1b-it</b> on GSM8K, built on Tunix/JAX with
+        LoRA adapters and a programmatic reward, across 18 individually reproducible runs. Shows that the
+        K=2 baseline can collapse from 48.4% to 3.1% held-out accuracy depending on the seed, and that larger
+        groups are the seed-robust fix: K=8 is the best run at 56.25%. Evaluated on 64 held-out prompts with
+        95% bootstrap confidence intervals, which overlap between the base model and K=8. Cambridge MPhil project.</p>
+        <div class="paper-buttons">
+          <a class="button" href="https://github.com/vitjuli/GRPO-finetuning-of-Gemma-3-1b-on-GSM8K-" target="_blank">Repository</a>
+        </div>
+      </div>
+
       <!-- M2 Deep Learning Coursework -->
       <div class="paper">
         <p class="title">
@@ -502,7 +518,7 @@
       <!-- Daytona HackSprint -->
       <div class="paper">
         <p class="title">
-          <b>Daytona HackSprint NYC — Agents That Rebuild Websites</b>
+          <b>Reversy — Agents That Rebuild Websites (Daytona HackSprint NYC)</b>
           <span class="tag">Multi-agent</span><span class="tag">Sandboxing</span>
         </p>
         <p>Agents that take a website apart and rebuild it: they capture evidence from the live site,
@@ -512,7 +528,8 @@
         it can against SEC filings in a network-isolated sandbox, and marks each figure consistent,
         inconsistent or not verifiable. New York, 2026.</p>
         <div class="paper-buttons">
-          <a class="button" href="https://github.com/AnalystTom/daytona_hack" target="_blank">Repository</a>
+          <a class="button" href="https://github.com/AnalystTom/daytona_hack/tree/orchestrator" target="_blank">My Orchestrator Branch</a>
+          <a class="button" href="https://github.com/AnalystTom/daytona_hack" target="_blank">Team Repository</a>
         </div>
       </div>
 
